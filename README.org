@@ -5,6 +5,12 @@
 
 A major mode for editing [[https://kdl.dev][KDL (Kdl Document Language)]] files in Emacs, powered by tree-sitter.
 
+*⚠️ ALPHA STATUS*: This package is currently in alpha stage. While it is functional, you may encounter bugs or incomplete features. Please report any issues you find!
+
+** Version Support
+
+Currently, this mode only supports KDL version 1.0.0. Support for KDL v2 will be added once the official tree-sitter grammar is updated to support the new specification. Other future versions of the KDL specification will also be supported as they are released and the corresponding tree-sitter grammar is updated.
+
 ** Features
 
 - Syntax highlighting via tree-sitter
