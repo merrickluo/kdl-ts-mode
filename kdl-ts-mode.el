@@ -105,9 +105,9 @@
 Return nil if there is no name or if NODE is not a defun node."
   (pcase (treesit-node-type node)
     ("node"
-     (treesit-node-text
-      (treesit-node-child-by-field-name node "identifier")
-      t))))
+     (when-let ((identifier (treesit-node-child node 0)))
+       (when (string= (treesit-node-type identifier) "identifier")
+         (treesit-node-text identifier t))))))
 
 (defun kdl-ts-mode--node-has-children-p (node)
   "Return t if NODE has children blocks."
@@ -169,7 +169,7 @@ Return nil if there is no name or if NODE is not a defun node."
 
     ;; Imenu
     (setq-local treesit-simple-imenu-settings
-                '(("Node" "\\`node\\'" nil nil)))
+                '(("Root" "\\`node\\'" nil nil)))
 
     (treesit-major-mode-setup)))
 
