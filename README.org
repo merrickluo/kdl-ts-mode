@@ -1,0 +1,80 @@
+#+TITLE: kdl-ts-mode
+#+AUTHOR: Merrick Luo
+
+* KDL Tree-sitter Mode for Emacs
+
+A major mode for editing [[https://kdl.dev][KDL (Kdl Document Language)]] files in Emacs, powered by tree-sitter.
+
+** Features
+
+- Syntax highlighting via tree-sitter
+- Smart indentation
+- Navigation commands
+- Imenu support
+- Comment handling
+- Proper fontification for:
+  - Comments (single-line and multi-line)
+  - Constants (true, false, null)
+  - Numbers
+  - Strings
+  - Types and annotations
+  - Properties
+  - Node identifiers
+  - Brackets and operators
+
+** Requirements
+
+- Emacs 29.1 or later
+- Tree-sitter grammar for KDL
+
+** Installation
+
+*** Using straight.el
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(kdl-ts-mode :type git :host github :repo "merrickluo/kdl-ts-mode"))
+#+end_src
+
+*** Manual Installation
+
+1. Clone this repository
+2. Add the following to your Emacs configuration:
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "/path/to/kdl-ts-mode")
+(require 'kdl-ts-mode)
+#+end_src
+
+** Usage
+
+Files with the =.kdl= extension will automatically open in =kdl-ts-mode=.
+
+*** Key Bindings
+
+| Key     | Command                    | Description                        |
+|---------+----------------------------+------------------------------------|
+| C-c C-b | kdl-ts-mode-beginning-of-node | Move to beginning of current node |
+| C-c C-e | kdl-ts-mode-end-of-node       | Move to end of current node       |
+
+*** Customization
+
+You can customize the indentation offset:
+
+#+begin_src emacs-lisp
+(setq kdl-ts-mode-indent-offset 2) ; Default is 4
+#+end_src
+
+** Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+** License
+
+This project is licensed under the terms of the GNU General Public License v3.0.
+
+** Acknowledgments
+
+- KDL Document Language: https://kdl.dev
+- Tree-sitter: https://tree-sitter.github.io/
+- KDL Tree-sitter grammar: https://github.com/tree-sitter-grammars/tree-sitter-kdl

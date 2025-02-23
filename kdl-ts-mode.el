@@ -14,8 +14,9 @@
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; Commentary:
-;; KDL Document Language: https://kdl.dev/#overview
 ;;
+;; KDL Document Language: https://kdl.dev/#overview
+;; tree-sitter-kdl: https://github.com/tree-sitter-grammars/tree-sitter-kdl
 ;;
 ;;; Code:
 
