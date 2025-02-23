@@ -170,7 +170,7 @@ Return nil if there is no name or if NODE is not a defun node."
 
     ;; Imenu
     (setq-local treesit-simple-imenu-settings
-                '(("Root" "\\`node\\'" nil nil)))
+                '(("Node" "\\`node\\'" nil nil)))
 
     (treesit-major-mode-setup)))
 
