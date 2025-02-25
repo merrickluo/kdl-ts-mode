@@ -23,7 +23,17 @@
 (require 'treesit)
 (require 'c-ts-common)
 (eval-when-compile (require 'rx))
-(treesit-declare-unavailable-functions)
+
+(if (>= emacs-major-version 31)
+    (treesit-declare-unavailable-functions)
+  (progn
+    (declare-function treesit-parser-create "treesit.c")
+    (declare-function treesit-node-child-by-field-name "treesit.c")
+    (declare-function treesit-node-start "treesit.c")
+    (declare-function treesit-node-type "treesit.c")
+    (declare-function treesit-search-subtree "treesit.c")
+    (declare-function treesit-filter-child "treesit.c")
+    (declare-function treesit-node-text "treesit.c")))
 
 (defgroup kdl nil
   "Major mode for editing KDL files."
